@@ -3,21 +3,23 @@
 }
 
 
-<div class="container">
-    <header class="header">
-        <img src="\Images\paula.png" alt="Foto de Paula" asp-append-version="true" class="profile-image" />
-        <h1 class="display-4">Paula Michell Garcia Valencia</h1>
-        <h2>Estudiante de Análisis y Desarrollo de Software</h2>
-    </header>
+<div class="hero-section text-center">
+    <img src="~/Images/paula.png" alt="Foto de Paula" class="profile-image" />
+    <h1 class="name">Paula Michell Garcia Valencia</h1>
+    <h2 class="role">Estudiante de Análisis y Desarrollo de Software</h2>
 
-        <section class="card">
-            <h3>Habilidades Blandas</h3>
-            <ul>
-                <li>Organización y gestión del tiempo</li>
-                <li>Comunicación efectiva</li>
-                <li>Pensamiento analítico</li>
-                <li>Trabajo en equipo</li>
-                <li>Actitud proactiva</li>
-            </ul>
-        </section>
+    <p class="tagline">
+        Apasionada por la tecnología, el aprendizaje continuo y el desarrollo de soluciones innovadoras.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="~/Docs/CV_Paula.pdf" class="btn-main">Descargar CV</a>
+        <a href="@Url.Action("Diseño", "Home")" class="btn-outline">Ver Proyectos</a>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://github.com/paula85Garcia" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:michellgarciagarcia85@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
 </div>

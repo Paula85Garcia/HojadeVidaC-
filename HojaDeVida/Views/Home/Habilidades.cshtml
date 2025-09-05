@@ -1,14 +1,83 @@
-﻿@page
-@model HojaDeVida.Views.Home.HabilidadesModel
+﻿@model HojaDeVida.Views.Home.HabilidadesModel
 @{
+    ViewData["Title"] = "Habilidades";
 }
+
+
 <section class="card">
     <h3>Habilidades Técnicas</h3>
+
+    <div class="skills">
+
+        <!-- Lenguajes / Frameworks -->
+        <div class="skill">
+            <div class="skill-header"><span>HTML5</span><span class="skill-level">85%</span></div>
+            <div class="progress"><div class="progress-bar" data-percent="85" style="width:0">Avanzado</div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header"><span>CSS3</span><span class="skill-level">80%</span></div>
+            <div class="progress"><div class="progress-bar" data-percent="80" style="width:0">Avanzado</div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header"><span>JavaScript</span><span class="skill-level">75%</span></div>
+            <div class="progress"><div class="progress-bar" data-percent="75" style="width:0">Intermedio</div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header"><span>Java</span><span class="skill-level">65%</span></div>
+            <div class="progress"><div class="progress-bar" data-percent="65" style="width:0">Intermedio</div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header"><span>SQL</span><span class="skill-level">60%</span></div>
+            <div class="progress"><div class="progress-bar" data-percent="60" style="width:0">Intermedio</div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header"><span>Git / GitHub</span><span class="skill-level">75%</span></div>
+            <div class="progress"><div class="progress-bar" data-percent="75" style="width:0">Intermedio</div></div>
+        </div>
+
+        <!-- Aprendiendo -->
+        <div class="skill">
+            <div class="skill-header"><span>Angular</span><span class="skill-level">40%</span></div>
+            <div class="progress"><div class="progress-bar" data-percent="40" style="width:0">Aprendiendo</div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header"><span>TypeScript</span><span class="skill-level">40%</span></div>
+            <div class="progress"><div class="progress-bar" data-percent="40" style="width:0">Aprendiendo</div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header"><span>C#</span><span class="skill-level">40%</span></div>
+            <div class="progress"><div class="progress-bar" data-percent="40" style="width:0">Aprendiendo</div></div>
+        </div>
+
+    </div>
+</section>
+
+<section class="card">
+    <h3>Herramientas & Frameworks</h3>
     <ul>
-        <li>Lenguajes: JavaScript, Java, HTML, CSS, TypeScript, C#, HTML5, CSS3, SQL</li>
-        <li>Frameworks / Herramientas: Git, GitHub, VS Code, Eclipse</li>
-        <li>Diseño de Software: Patrones como MVC</li>
-        <li>Metodologías Ágiles: Scrum</li>
-        <li>Otros: Notion, Excel, Trello, Jira</li>
+        <li>VS Code · Eclipse · MySQL / Workbench</li>
+        <li>Bootstrap / Tailwind (básico)</li>
+        <li>Notion · Trello · Jira · Excel</li>
     </ul>
 </section>
+
+
+
+@section Scripts {
+    <script>
+        // Animación simple de barras: deja width = 0 en HTML y las anima a data-percent
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.progress-bar').forEach(function(bar, i){
+                const p = bar.getAttribute('data-percent') || '0';
+                setTimeout(function(){ bar.style.width = p + '%'; }, 100 + i*80);
+            });
+        });
+    </script>
+}

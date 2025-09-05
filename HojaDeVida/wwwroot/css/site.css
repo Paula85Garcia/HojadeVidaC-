@@ -1,33 +1,60 @@
+﻿/* Base */
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
     font-size: 16px;
-  }
+    position: relative;
+    min-height: 100%;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121212;
     color: #f0f0f0;
     margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* garantiza que el footer quede abajo */
 }
 
+main {
+    flex: 1; /* el contenido ocupa el espacio restante */
+}
+
+/* Navbar personalizada */
+.custom-navbar {
+    background-color: #121212 !important;
+    border-bottom: 1px solid rgba(0,255,255,0.2);
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.text-accent {
+    color: #00ffff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #ccc !important;
+    margin: 0 8px;
+    transition: color 0.3s, border-bottom 0.3s;
+    font-weight: 500;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #00ffff !important;
+        border-bottom: 2px solid #00ffff;
+    }
+
+    .navbar-nav .nav-link.active {
+        color: #00ffff !important;
+        font-weight: bold;
+        border-bottom: 2px solid #00ffff;
+    }
+
+/* Links */
 a {
     color: #00ffff;
     text-decoration: none;
@@ -37,12 +64,14 @@ a {
         text-decoration: underline;
     }
 
+/* Layout */
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* Header */
 .header {
     text-align: center;
     padding: 40px 20px;
@@ -57,6 +86,7 @@ a {
     margin-bottom: 20px;
 }
 
+/* Tipografía */
 h1 {
     color: #00ffff;
     margin-bottom: 5px;
@@ -68,6 +98,14 @@ h2 {
     margin-top: 0;
 }
 
+h3 {
+    color: #00ffff;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #00ffff;
+    padding-bottom: 5px;
+}
+
+/* Secciones */
 .content {
     display: grid;
     grid-template-columns: 1fr;
@@ -81,23 +119,193 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
 }
 
-h3 {
-    color: #00ffff;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #00ffff;
-    padding-bottom: 5px;
-}
-
 ul {
     padding-left: 20px;
     list-style-type: square;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 15px;
-    margin-top: 40px;
     background-color: #1e1e1e;
     color: #aaa;
     font-size: 14px;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: calc(100vh - 80px); /* ocupa casi toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,0.9)), url('/Images/fondo.jpg') no-repeat center center/cover;
+    padding: 20px;
+}
+
+    .hero-section .name {
+        font-size: 2.5rem;
+        color: #00ffff;
+        margin-top: 20px;
+    }
+
+    .hero-section .role {
+        font-size: 1.2rem;
+        color: #ccc;
+    }
+
+    .hero-section .tagline {
+        margin-top: 15px;
+        color: #aaa;
+        max-width: 600px;
+    }
+
+/* Botones */
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.btn-main,
+.btn-outline {
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-main {
+    background: #00ffff;
+    color: #121212;
+}
+
+.btn-outline {
+    border: 2px solid #00ffff;
+    color: #00ffff;
+}
+
+    .btn-outline:hover {
+        background: #00ffff;
+        color: #121212;
+    }
+
+/* Iconos sociales */
+.social-icons {
+    margin-top: 30px;
+}
+
+    .social-icons a {
+        color: #ccc;
+        margin: 0 10px;
+        font-size: 1.5rem;
+    }
+
+        .social-icons a:hover {
+            color: #00ffff;
+        }
+
+/* Proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,255,255,0.1);
+}
+
+    .project-card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+/* Sobre mí */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 15px;
+    border: 3px solid #00ffff;
+}
+
+/* Habilidades */
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.skill-level {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Progreso */
+.progress {
+    background: #2a2a2a;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 28px;
+    box-shadow: inset 0 0 5px rgba(0,255,255,0.08);
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg,#00ffff,#00bfff);
+    color: #121212;
+    text-align: center;
+    font-weight: 600;
+    transition: width 1.1s ease-in-out;
+}
+
+/* Grids */
+.projects-grid, .refs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 18px;
+    margin-top: 12px;
+}
+.progress {
+    background: #2a2a2a;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 28px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg,var(--accent),var(--accent-2));
+    color: #121212;
+    font-weight: 600;
+    transition: width 1.1s ease-in-out;
+}
+
+/* Utility safe-guards: elimina posibles clases Bootstrap que fijen el footer */
+.fixed-bottom, .position-fixed, footer.fixed-bottom, footer.position-fixed {
+    position: static !important;
+    bottom: auto !important;
+}
+/* === Footer (asegurado) === */
+footer {
+    position: static !important;
+    text-align: center;
+    padding: 15px;
+    background-color: #1e1e1e;
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 20px;
 }
